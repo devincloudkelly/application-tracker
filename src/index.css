@@ -15,11 +15,11 @@ body {
   margin: 10px;
 }
 .btn-group button {
-  background-color: #dfdfdf;
+  background-color: #efefef;
   padding: 10px 20px;
   border: 0px solid black;
 }
 
 .selected {
-  filter: brightness(1.1);
+  filter: brightness(0.9);
 }
