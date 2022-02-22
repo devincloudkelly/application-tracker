@@ -4,13 +4,13 @@ import ButtonGroup from "./components/ButtonGroup";
 function App() {
   // Need to return a button group at top to switch between adding an app, viewing old apps
   // Then return the content based on which button is selected
-  const [isNewAppView, setIsNewAppView] = useState(true);
+  const [selectedView, setSelectedView] = useState("add-new-btn");
 
   return (
-    <div className="App">
+    <section className="App">
       Hello, world
-      <ButtonGroup view={isNewAppView} setView={setIsNewAppView} />
-    </div>
+      <ButtonGroup view={selectedView} setView={setSelectedView} />
+    </section>
   );
 }
 
