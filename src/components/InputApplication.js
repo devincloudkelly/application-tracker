@@ -16,9 +16,9 @@ const InputApplication = () => {
         </label>
         <input name="notes" type="text"></input>
         <label>
-          <p>Notes</p>
+          <p>Job Title</p>
         </label>
-        <input name="notes" type="text"></input>
+        <input name="job-title" type="text"></input>
         <button type="submit" onClick={(event) => handleSubmit(event)}>
           ADD
         </button>
