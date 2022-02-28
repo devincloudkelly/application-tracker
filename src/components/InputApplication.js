@@ -1,16 +1,34 @@
+import { useState } from "react";
+
 const InputApplication = () => {
+  const [salaryRange, setSalaryRange] = useState("");
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("handling form submit..", event);
+    console.log("handling form submit..", event.target);
+  };
+
+  const handleChange = (event) => {
+    // handle change based on which input is updating
+    let name = event.target.name;
+    let value = event.target.value;
+    if (name === "salary-range") {
+      setSalaryRange(value);
+    }
   };
 
   return (
     <article>
-      <form>
+      <form onSubmit={(event) => handleSubmit(event)}>
         <label>
           <p>Salary Range</p>
         </label>
-        <input name="salary-range" type="text"></input>
+        <input
+          name="salary-range"
+          type="text"
+          value={salaryRange}
+          onChange={(event) => handleChange(event)}
+        ></input>
         <label>
           <p>Notes</p>
         </label>
@@ -19,9 +37,7 @@ const InputApplication = () => {
           <p>Job Title</p>
         </label>
         <input name="job-title" type="text"></input>
-        <button type="submit" onClick={(event) => handleSubmit(event)}>
-          ADD
-        </button>
+        <button type="submit">ADD</button>
         <p>Click to save the url and date. All fields are optional.</p>
       </form>
     </article>
