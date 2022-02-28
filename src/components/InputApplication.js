@@ -11,15 +11,15 @@ const InputApplication = () => {
       salaryRange: event.target[0].value,
       notes: event.target[1].value,
       jobTitle: event.target[2].value,
+      url: window.location.href,
+      date: new Date(),
     };
     console.log("handling form submit..here is the submitObj ", submitObj);
     // Need to create an 'applications' state value in App, then pass down the setState for that so that I can save each submission.
   };
 
   const handleChange = (event) => {
-    // handle change based on which input is updating
-    let name = event.target.name;
-    let value = event.target.value;
+    let { name, value } = event.target;
     if (name === "salary-range") {
       setSalaryRange(value);
     }
