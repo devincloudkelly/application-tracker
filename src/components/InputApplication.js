@@ -2,10 +2,18 @@ import { useState } from "react";
 
 const InputApplication = () => {
   const [salaryRange, setSalaryRange] = useState("");
+  const [notes, setNotes] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("handling form submit..", event.target);
+    const submitObj = {
+      salaryRange: event.target[0].value,
+      notes: event.target[1].value,
+      jobTitle: event.target[2].value,
+    };
+    console.log("handling form submit..here is the submitObj ", submitObj);
+    // Need to create an 'applications' state value in App, then pass down the setState for that so that I can save each submission.
   };
 
   const handleChange = (event) => {
@@ -15,11 +23,17 @@ const InputApplication = () => {
     if (name === "salary-range") {
       setSalaryRange(value);
     }
+    if (name === "notes") {
+      setNotes(value);
+    }
+    if (name === "job-title") {
+      setJobTitle(value);
+    }
   };
 
   return (
     <article>
-      <form onSubmit={(event) => handleSubmit(event)}>
+      <form onSubmit={handleSubmit}>
         <label>
           <p>Salary Range</p>
         </label>
@@ -27,16 +41,26 @@ const InputApplication = () => {
           name="salary-range"
           type="text"
           value={salaryRange}
-          onChange={(event) => handleChange(event)}
+          onChange={handleChange}
         ></input>
         <label>
           <p>Notes</p>
         </label>
-        <input name="notes" type="text"></input>
+        <input
+          name="notes"
+          type="text"
+          value={notes}
+          onChange={handleChange}
+        ></input>
         <label>
           <p>Job Title</p>
         </label>
-        <input name="job-title" type="text"></input>
+        <input
+          name="job-title"
+          type="text"
+          value={jobTitle}
+          onChange={handleChange}
+        ></input>
         <button type="submit">ADD</button>
         <p>Click to save the url and date. All fields are optional.</p>
       </form>
