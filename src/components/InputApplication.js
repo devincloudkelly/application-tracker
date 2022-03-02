@@ -62,8 +62,8 @@ const InputApplication = () => {
           onChange={handleChange}
         ></input>
         <button type="submit">ADD</button>
-        <p>Click to save the url and date. All fields are optional.</p>
       </form>
+      <p>Click to save the url and date. All fields are optional.</p>
     </article>
   );
 };

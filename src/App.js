@@ -9,7 +9,6 @@ function App() {
 
   return (
     <section className="App">
-      Hello, world
       <ButtonGroup view={selectedView} setView={setSelectedView} />
       {selectedView === "add-new-btn" ? (
         <InputApplication />
