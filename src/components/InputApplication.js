@@ -63,7 +63,7 @@ const InputApplication = () => {
         ></input>
         <button type="submit">ADD</button>
       </form>
-      <p>Click to save the url and date. All fields are optional.</p>
+      <p>Click to save the url and date. All fields above are optional.</p>
     </article>
   );
 };
