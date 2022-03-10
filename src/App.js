@@ -12,7 +12,10 @@ function App() {
     <section className="App">
       <ButtonGroup view={selectedView} setView={setSelectedView} />
       {selectedView === "add-new-btn" ? (
-        <InputApplication setApplications={setApplications} />
+        <InputApplication
+          applications={applications}
+          setApplications={setApplications}
+        />
       ) : (
         <ViewApplications applications={applications} />
       )}

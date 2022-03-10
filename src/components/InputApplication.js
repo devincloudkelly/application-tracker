@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-const InputApplication = () => {
+const InputApplication = (props) => {
   const [salaryRange, setSalaryRange] = useState("");
   const [notes, setNotes] = useState("");
   const [jobTitle, setJobTitle] = useState("");
+  let { applications, setApplications } = props;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,8 +15,9 @@ const InputApplication = () => {
       url: window.location.href,
       date: new Date(),
     };
+    setApplications([...applications, submitObj]);
+    console.log(props);
     console.log("handling form submit..here is the submitObj ", submitObj);
-    // Need to create an 'applications' state value in App, then pass down the setState for that so that I can save each submission.
   };
 
   const handleChange = (event) => {
