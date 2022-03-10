@@ -6,14 +6,15 @@ import ViewApplications from "./components/ViewApplications";
 function App() {
   // Then return the content based on which button is selected
   const [selectedView, setSelectedView] = useState("add-new-btn");
+  const [applications, setApplications] = useState([]);
 
   return (
     <section className="App">
       <ButtonGroup view={selectedView} setView={setSelectedView} />
       {selectedView === "add-new-btn" ? (
-        <InputApplication />
+        <InputApplication setApplications={setApplications} />
       ) : (
-        <ViewApplications />
+        <ViewApplications applications={applications} />
       )}
     </section>
   );
