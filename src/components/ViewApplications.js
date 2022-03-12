@@ -1,13 +1,19 @@
 const ViewApplications = (props) => {
   const { applications } = props;
 
-  const renderApplications = () => {
-    console.log("rendering applications...", applications);
-    return applications.forEach((application) => {
-      console.log(application);
-      const { salaryRange, notes, jobTitle, url, date } = application;
+  const renderApplications = (apps) => {
+    console.log("rendering applications...", apps);
+    // for (
+    //   let application = 0;
+    //   application < applications.length;
+    //   application++
+    // ) {
+    return apps.forEach((app) => {
+      console.log(app);
+      const { salaryRange, notes, jobTitle, url, date } = app;
+
       return (
-        <div className="app-div">
+        <li className="app-div">
           <div>
             <h5>{jobTitle}</h5>
             <h5>{salaryRange}</h5>
@@ -18,9 +24,9 @@ const ViewApplications = (props) => {
                 {url}
               </a>
             </h5>
-            <h5>{date.toDateString()}</h5>
+            <h5>{date}</h5>
           </div>
-        </div>
+        </li>
       );
     });
   };
@@ -28,7 +34,7 @@ const ViewApplications = (props) => {
   return (
     <article>
       <h2>View Applications</h2>
-      {renderApplications()}
+      <ul>{renderApplications(applications)}</ul>
     </article>
   );
 };
