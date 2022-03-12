@@ -8,12 +8,12 @@ const ViewApplications = (props) => {
     //   application < applications.length;
     //   application++
     // ) {
-    return apps.forEach((app) => {
+    return apps.map((app) => {
       console.log(app);
       const { salaryRange, notes, jobTitle, url, date } = app;
 
       return (
-        <li className="app-div">
+        <li key={date.toISOString()} className="app-div">
           <div>
             <h5>{jobTitle}</h5>
             <h5>{salaryRange}</h5>
@@ -24,7 +24,7 @@ const ViewApplications = (props) => {
                 {url}
               </a>
             </h5>
-            <h5>{date}</h5>
+            <h5>{date.toLocaleString()}</h5>
           </div>
         </li>
       );
