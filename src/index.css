@@ -2,7 +2,7 @@
 
 colors:
 
-alert: #EF626C
+alert: #EF626C or #E5D352
 text: #22181C
 link: #6D98BA
 bg: #F6E8EA
@@ -10,6 +10,8 @@ success: #84DCCF
 dark grey: #5C6D70
 light grey: #F6F3F6
 mid grey: #EDE8ED
+light button: #AE98AE
+dark button: #937693
 */
 
 body {
@@ -19,6 +21,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #22181c;
 }
 
 .App {
@@ -33,13 +36,13 @@ body {
   margin: 10px;
 }
 button {
-  background-color: #f6f3f6;
+  background-color: #ae98ae;
   padding: 15px 20px;
   border: 0px solid black;
 }
 
 .selected {
-  background-color: #ede8ed;
+  background-color: #937693;
 }
 
 form {
@@ -90,7 +93,7 @@ li {
 
 .bottom-line {
   color: #5c6d70;
-  color: #ae98ae;
+  color: #9c819c;
 }
 
 a {
