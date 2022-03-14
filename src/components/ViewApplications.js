@@ -1,3 +1,5 @@
+import ReactTimeAgo from "react-time-ago";
+
 const ViewApplications = (props) => {
   const { applications } = props;
 
@@ -16,15 +18,22 @@ const ViewApplications = (props) => {
         <li key={date.toISOString()} className="app-div">
           <div className="app-line">
             <h5>
-              {jobTitle} &nbsp;&nbsp;&nbsp; ${salaryRange}
+              {jobTitle} &nbsp;&nbsp;&nbsp;&nbsp; ${salaryRange}
             </h5>
           </div>
           <div className="app-line">
-            <h5>
+            <h5 className="bottom-line">
               <a href={url} target="_blank" rel="noreferrer">
                 link
               </a>{" "}
-              &nbsp;&nbsp;&nbsp; {date.toLocaleString()}
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              {notes}
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{" "}
+              <ReactTimeAgo
+                date={date.toLocaleString()}
+                locale="en-us"
+                timeStyle="twitter-minute-now"
+              />
             </h5>
           </div>
         </li>
