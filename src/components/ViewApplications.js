@@ -14,17 +14,18 @@ const ViewApplications = (props) => {
 
       return (
         <li key={date.toISOString()} className="app-div">
-          <div>
-            <h5>{jobTitle}</h5>
-            <h5>{salaryRange}</h5>
+          <div className="app-line">
+            <h5>
+              {jobTitle} &nbsp;&nbsp;&nbsp; ${salaryRange}
+            </h5>
           </div>
-          <div>
+          <div className="app-line">
             <h5>
               <a href={url} target="_blank" rel="noreferrer">
-                {url}
-              </a>
+                link
+              </a>{" "}
+              &nbsp;&nbsp;&nbsp; {date.toLocaleString()}
             </h5>
-            <h5>{date.toLocaleString()}</h5>
           </div>
         </li>
       );
