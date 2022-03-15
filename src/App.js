@@ -8,6 +8,10 @@ function App() {
   const [selectedView, setSelectedView] = useState("add-new-btn");
   const [applications, setApplications] = useState([]);
 
+  const handleApplications = () => {
+    console.log("handling applications..");
+  };
+
   return (
     <section className="App">
       <ButtonGroup view={selectedView} setView={setSelectedView} />
