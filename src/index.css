@@ -35,10 +35,24 @@ body {
   width: 100%;
   margin: 10px;
 }
+
 button {
   background-color: #ae98ae;
   padding: 15px 20px;
   border: 0px solid black;
+  border-radius: 3px;
+}
+
+.left-btn {
+  border-radius: 0px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.right-btn {
+  border-radius: 0px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 .selected {
@@ -92,10 +106,10 @@ li {
 }
 
 .bottom-line {
-  color: #5c6d70;
   color: #9c819c;
 }
 
 a {
-  color: #6d98ba;
+  color: #896c89;
+  color: #9c819c;
 }

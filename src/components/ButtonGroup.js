@@ -12,14 +12,14 @@ const ButtonGroup = (props) => {
     <div className="btn-group">
       <button
         id="add-new-btn"
-        className={view === "add-new-btn" ? "selected" : ""}
+        className={`${view === "add-new-btn" ? "selected" : ""} left-btn`}
         onClick={(e) => handleClick(e)}
       >
         Add New
       </button>
       <button
         id="view-all-btn"
-        className={view === "view-all-btn" ? "selected" : ""}
+        className={`${view === "view-all-btn" ? "selected" : ""} right-btn`}
         onClick={(e) => handleClick(e)}
       >
         View All
