@@ -15,7 +15,7 @@ const ViewApplications = (props) => {
       const { salaryRange, notes, jobTitle, url, date } = app;
 
       return (
-        <li key={date.toISOString()} className="app-div">
+        <li key={date} className="app-div">
           <div className="app-line">
             <h5>
               {jobTitle} &nbsp;&nbsp;&nbsp;&nbsp; ${salaryRange}

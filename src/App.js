@@ -13,17 +13,15 @@ function App() {
     setApplications([...applications, application]);
   };
 
-  // useEffect(() => {
-  //   console.log(
-  //     "useEffect triggered...here is applications and localStorage(applications)",
-  //     applications,
-  //     localStorage.getItem("applications")
-  //   );
-  //   if (localStorage.getItem("applications")) {
-  //     console.log("getting applications from localStorage in useEffect");
-  //     setApplications(JSON.parse(localStorage.getItem("applications")));
-  //   }
-  // }, []);
+  useEffect(() => {
+    console.log("getting applications from localStorage in useEffect");
+    setApplications(JSON.parse(localStorage.getItem("applications")) || []);
+  }, []);
+
+  useEffect(() => {
+    console.log("updating localStorage with updated applications");
+    localStorage.setItem("applications", JSON.stringify(applications));
+  }, [applications]);
 
   return (
     <section className="App">
