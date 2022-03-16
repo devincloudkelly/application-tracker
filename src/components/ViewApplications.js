@@ -44,7 +44,11 @@ const ViewApplications = (props) => {
   return (
     <article>
       <h2>View Applications</h2>
-      <ul>{renderApplications(applications)}</ul>
+      <ul>
+        {applications
+          ? renderApplications(applications)
+          : "No applications saved yet"}
+      </ul>
     </article>
   );
 };

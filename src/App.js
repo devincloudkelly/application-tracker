@@ -6,18 +6,29 @@ import ViewApplications from "./components/ViewApplications";
 function App() {
   // Then return the content based on which button is selected
   const [selectedView, setSelectedView] = useState("add-new-btn");
-  const [applications, setApplications] = useState([]);
+  const [applications, setApplications] = useState(() => {
+    const persistedApplications = JSON.parse(
+      localStorage.getItem("applications")
+    );
+    return persistedApplications !== null ? persistedApplications : [];
+  });
 
   const handleApplication = (application) => {
-    console.log("handling applications..", application);
+    console.log(
+      "handling applications..application and applications state",
+      application,
+      applications
+    );
     setApplications([...applications, application]);
   };
 
-  useEffect(() => {
-    console.log("getting applications from localStorage in useEffect");
-    setApplications(JSON.parse(localStorage.getItem("applications")) || []);
-  }, []);
+  // runs once on component mount, pulls applicatins from localStorage.
+  // useEffect(() => {
+  //   console.log("getting applications from localStorage in useEffect");
+  //   setApplications(JSON.parse(localStorage.getItem("applications")));
+  // }, []);
 
+  // updates local storate when applications state updates
   useEffect(() => {
     console.log("updating localStorage with updated applications");
     localStorage.setItem("applications", JSON.stringify(applications));
