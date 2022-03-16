@@ -4,7 +4,7 @@ const InputApplication = (props) => {
   const [salaryRange, setSalaryRange] = useState("");
   const [notes, setNotes] = useState("");
   const [jobTitle, setJobTitle] = useState("");
-  let { applications, setApplications } = props;
+  let { applications, setApplications, handleApplication } = props;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,9 +15,8 @@ const InputApplication = (props) => {
       url: window.location.href,
       date: new Date(),
     };
-    setApplications([...applications, submitObj]);
-    console.log(props);
-    console.log("handling form submit..here is the submitObj ", submitObj);
+    // setApplications([...applications, submitObj]);
+    handleApplication(submitObj);
   };
 
   const handleChange = (event) => {

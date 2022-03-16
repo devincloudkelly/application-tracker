@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ButtonGroup from "./components/ButtonGroup";
 import InputApplication from "./components/InputApplication";
 import ViewApplications from "./components/ViewApplications";
@@ -8,9 +8,22 @@ function App() {
   const [selectedView, setSelectedView] = useState("add-new-btn");
   const [applications, setApplications] = useState([]);
 
-  const handleApplications = () => {
-    console.log("handling applications..");
+  const handleApplication = (application) => {
+    console.log("handling applications..", application);
+    setApplications([...applications, application]);
   };
+
+  // useEffect(() => {
+  //   console.log(
+  //     "useEffect triggered...here is applications and localStorage(applications)",
+  //     applications,
+  //     localStorage.getItem("applications")
+  //   );
+  //   if (localStorage.getItem("applications")) {
+  //     console.log("getting applications from localStorage in useEffect");
+  //     setApplications(JSON.parse(localStorage.getItem("applications")));
+  //   }
+  // }, []);
 
   return (
     <section className="App">
@@ -19,6 +32,7 @@ function App() {
         <InputApplication
           applications={applications}
           setApplications={setApplications}
+          handleApplication={handleApplication}
         />
       ) : (
         <ViewApplications applications={applications} />

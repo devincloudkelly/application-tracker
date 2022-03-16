@@ -30,7 +30,7 @@ const ViewApplications = (props) => {
               {notes}
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{" "}
               <ReactTimeAgo
-                date={date.toLocaleString()}
+                date={date}
                 locale="en-us"
                 timeStyle="twitter-minute-now"
               />
