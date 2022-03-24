@@ -14,11 +14,6 @@ function App() {
   });
 
   const handleApplication = (application) => {
-    console.log(
-      "handling applications..application and applications state",
-      application,
-      applications
-    );
     setApplications([...applications, application]);
   };
 
@@ -28,7 +23,7 @@ function App() {
   //   setApplications(JSON.parse(localStorage.getItem("applications")));
   // }, []);
 
-  // updates local storate when applications state updates
+  // updates local storage when applications state updates
   useEffect(() => {
     console.log("updating localStorage with updated applications");
     localStorage.setItem("applications", JSON.stringify(applications));

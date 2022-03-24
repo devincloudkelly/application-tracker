@@ -4,7 +4,7 @@ const InputApplication = (props) => {
   const [salaryRange, setSalaryRange] = useState("");
   const [notes, setNotes] = useState("");
   const [jobTitle, setJobTitle] = useState("");
-  let { applications, setApplications, handleApplication } = props;
+  let { handleApplication } = props;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,7 +15,6 @@ const InputApplication = (props) => {
       url: window.location.href,
       date: new Date(),
     };
-    // setApplications([...applications, submitObj]);
     handleApplication(submitObj);
   };
 
