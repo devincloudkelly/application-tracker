@@ -55,6 +55,12 @@ button {
   border-bottom-right-radius: 3px;
 }
 
+.app-btn {
+  padding: 2px;
+  border-radius: 10px;
+  width: 2em;
+}
+
 .selected {
   background-color: #937693;
 }
