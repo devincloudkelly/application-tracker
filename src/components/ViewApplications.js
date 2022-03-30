@@ -16,7 +16,36 @@ const ViewApplications = (props) => {
 
       return (
         <li key={date} className="app-div">
-          <div className="app-line">
+          <div className="app-item">
+            <h5>{jobTitle}</h5>
+          </div>
+          <div className="app-item">
+            <h5>${salaryRange}</h5>
+          </div>
+          <div className="app-item">
+            <button className="app-btn">...</button>
+          </div>
+          <div className="app-item">
+            <h5>
+              <a href={url} target="_blank" rel="noreferrer">
+                link
+              </a>
+            </h5>
+          </div>
+          <div className="app-item">
+            <h5>{notes}</h5>
+          </div>
+          <div className="app-item">
+            <h5>
+              <ReactTimeAgo
+                date={date}
+                locale="en-us"
+                timeStyle="twitter-minute-now"
+              />
+            </h5>
+          </div>
+
+          {/* <div className="app-line">
             <h5>
               {jobTitle} &nbsp;&nbsp;&nbsp;&nbsp; ${salaryRange}
             </h5>
@@ -36,7 +65,7 @@ const ViewApplications = (props) => {
                 timeStyle="twitter-minute-now"
               />
             </h5>
-          </div>
+          </div> */}
         </li>
       );
     });
