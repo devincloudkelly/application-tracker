@@ -23,7 +23,9 @@ const ViewApplications = (props) => {
             <h5>${salaryRange}</h5>
           </div>
           <div className="app-item">
-            <button className="app-btn">...</button>
+            <button className="app-btn">
+              <h5>...</h5>
+            </button>
           </div>
           <div className="app-item">
             <h5>

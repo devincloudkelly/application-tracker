@@ -57,8 +57,17 @@ button {
 
 .app-btn {
   padding: 2px;
-  border-radius: 10px;
-  width: 2em;
+  border-radius: 16px;
+  width: 1.6em;
+  height: 1.6em;
+  text-align: center;
+}
+
+.app-btn h5 {
+  margin-top: -0.5em;
+  margin-right: -0.1em;
+  letter-spacing: 0.1em;
+  font-size: 1em;
 }
 
 .selected {
@@ -126,6 +135,7 @@ li {
 }
 
 .app-item {
+  align-self: center;
 }
 
 a {
