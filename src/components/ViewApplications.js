@@ -3,6 +3,13 @@ import ReactTimeAgo from "react-time-ago";
 const ViewApplications = (props) => {
   const { applications } = props;
 
+  const truncateString = (string) => {
+    if (string.length > 30) {
+      return `${string.slice(0, 28)}...`;
+    }
+    return string;
+  };
+
   const renderApplications = (apps) => {
     console.log("rendering applications...", apps);
     // for (
@@ -17,10 +24,10 @@ const ViewApplications = (props) => {
       return (
         <li key={date} className="app-div">
           <div className="app-item">
-            <h5>{jobTitle}</h5>
+            <h5>${salaryRange}</h5>
           </div>
           <div className="app-item">
-            <h5>${salaryRange}</h5>
+            <h5>{jobTitle}</h5>
           </div>
           <div className="app-item">
             <button className="app-btn">
@@ -30,12 +37,12 @@ const ViewApplications = (props) => {
           <div className="app-item">
             <h5>
               <a href={url} target="_blank" rel="noreferrer">
-                link
+                view job
               </a>
             </h5>
           </div>
           <div className="app-item">
-            <h5>{notes}</h5>
+            <h5>{truncateString(notes)}</h5>
           </div>
           <div className="app-item">
             <h5>
